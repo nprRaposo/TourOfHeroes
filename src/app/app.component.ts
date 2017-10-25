@@ -5,6 +5,14 @@ import { Component } from '@angular/core';
   template: `<h1>{{title}}</h1><h2>{{hero}} details!</h2>`,
 })
 export class AppComponent  { 
-  title = 'Tour of Heroes'; 
-  hero = 'Batman';
+  title : string; 
+  hero : string;
+  heroes : string [];
+
+  constructor(){
+    this.title = "Tour of heroes";
+    this.heroes = ["Superman", "Batman", "Robin", "Chapulin Colorado"]
+    this.hero = this.heroes[0];
+    
+  }
 }
