@@ -4,11 +4,6 @@ import { Hero } from './hero';
 @Component({
   selector: 'my-app',
   template: `
-    <div *ngIf="selectedHero">
-      <div><label>id: </label>{{selectedHero.id}}</div>
-      <label>name: </label>
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </div>
     <h1>{{title}}</h1>
     <h2>My Heroes</h2>
     <ul class="heroes">
@@ -16,6 +11,7 @@ import { Hero } from './hero';
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
+    <hero-detail [hero]="selectedHero"></hero-detail>
   `, 
   styles: [`
   .selected {
