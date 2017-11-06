@@ -8,12 +8,18 @@ import { HeroesComponent }     from './heroes.component';
 import { HeroService }         from './hero.service';
 import { DashboardComponent } from './dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule }    from '@angular/http';
 
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryHeroMockService } from './in-memory-hero-mock.service';
 
 @NgModule({
   imports:      [ 
     BrowserModule,
     FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryHeroMockService),
     AppRoutingModule
   ],
   declarations: [ AppComponent, HeroDetailComponent, HeroesComponent, DashboardComponent ],
